@@ -51,10 +51,14 @@ async function buildSkillsDir(config: Record<string, unknown>): Promise<string> 
   );
   for (const entry of availableEntries) {
     if (!desiredNames.has(entry.key)) continue;
-    await fs.symlink(
-      entry.source,
-      path.join(target, entry.runtimeName),
-    );
+    const runtimeSkillPath = path.join(target, entry.runtimeName);
+    try {
+      await fs.symlink(entry.source, runtimeSkillPath);
+    } catch (err) {
+      const code = typeof err === "object" && err !== null && "code" in err ? err.code : null;
+      if (code !== "EPERM" && code !== "EACCES") throw err;
+      await fs.cp(entry.source, runtimeSkillPath, { recursive: true, force: true });
+    }
   }
   return tmp;
 }
