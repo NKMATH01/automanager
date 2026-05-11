@@ -47,34 +47,34 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="w-60 h-full min-h-0 border-r border-border bg-background flex flex-col">
+    <aside className="w-72 h-full min-h-0 border-r border-sidebar-border bg-sidebar text-sidebar-foreground flex flex-col">
       {/* Top bar: Company name (bold) + Search — aligned with top sections (no visible border) */}
-      <div className="flex items-center gap-1 px-3 h-12 shrink-0">
+      <div className="flex items-center gap-2 px-4 h-16 shrink-0 border-b border-sidebar-border/70">
         {selectedCompany?.brandColor && (
           <div
-            className="w-4 h-4 rounded-sm shrink-0 ml-1"
+            className="w-5 h-5 rounded-md shrink-0"
             style={{ backgroundColor: selectedCompany.brandColor }}
           />
         )}
-        <span className="flex-1 text-sm font-bold text-foreground truncate pl-1">
+        <span className="flex-1 text-base font-semibold text-sidebar-foreground truncate">
           {selectedCompany?.name ?? "회사 선택"}
         </span>
         <Button
           variant="ghost"
           size="icon-sm"
-          className="text-muted-foreground shrink-0"
+          className="text-muted-foreground shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
           onClick={openSearch}
         >
           <Search className="h-4 w-4" />
         </Button>
       </div>
 
-      <nav className="flex-1 min-h-0 overflow-y-auto scrollbar-auto-hide flex flex-col gap-4 px-3 py-2">
-        <div className="flex flex-col gap-0.5">
+      <nav className="flex-1 min-h-0 overflow-y-auto scrollbar-auto-hide flex flex-col gap-5 px-4 py-4">
+        <div className="flex flex-col gap-1">
           {/* New Issue button aligned with nav items */}
           <button
             onClick={() => openNewIssue()}
-            className="flex items-center gap-2.5 px-3 py-2 text-[13px] font-medium text-muted-foreground hover:bg-accent/50 hover:text-foreground transition-colors"
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] font-medium text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-colors"
           >
             <SquarePen className="h-4 w-4 shrink-0" />
             <span className="truncate">새 이슈</span>
@@ -91,8 +91,8 @@ export function Sidebar() {
           <PluginSlotOutlet
             slotTypes={["sidebar"]}
             context={pluginContext}
-            className="flex flex-col gap-0.5"
-            itemClassName="text-[13px] font-medium"
+            className="flex flex-col gap-1"
+            itemClassName="text-[15px] font-medium"
             missingBehavior="placeholder"
           />
         </div>
@@ -119,7 +119,7 @@ export function Sidebar() {
           slotTypes={["sidebarPanel"]}
           context={pluginContext}
           className="flex flex-col gap-3"
-          itemClassName="rounded-lg border border-border p-3"
+          itemClassName="rounded-lg border border-sidebar-border bg-background/45 p-3"
           missingBehavior="placeholder"
         />
       </nav>

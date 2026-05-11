@@ -268,14 +268,14 @@ export function CompanyRail() {
   );
 
   return (
-    <div className="flex flex-col items-center w-[72px] shrink-0 h-full bg-background border-r border-border">
+    <div className="flex flex-col items-center w-20 shrink-0 h-full bg-sidebar border-r border-sidebar-border">
       {/* Paperclip icon - aligned with top sections (implied line, no visible border) */}
-      <div className="flex items-center justify-center h-12 w-full shrink-0">
-        <Paperclip className="h-5 w-5 text-foreground" />
+      <div className="flex items-center justify-center h-16 w-full shrink-0 border-b border-sidebar-border/70">
+        <Paperclip className="h-6 w-6 text-sidebar-foreground" />
       </div>
 
       {/* Company list */}
-      <div className="flex-1 flex flex-col items-center gap-2 py-3 w-full overflow-y-auto overflow-x-hidden scrollbar-none">
+      <div className="flex-1 flex flex-col items-center gap-3 py-4 w-full overflow-y-auto overflow-x-hidden scrollbar-none">
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -305,7 +305,7 @@ export function CompanyRail() {
       </div>
 
       {/* Separator before add button */}
-      <div className="w-8 h-px bg-border mx-auto shrink-0" />
+      <div className="w-10 h-px bg-sidebar-border mx-auto shrink-0" />
 
       {/* Add company button */}
       <div className="flex items-center justify-center py-2 shrink-0">

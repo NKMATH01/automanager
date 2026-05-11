@@ -346,7 +346,7 @@ export function Layout() {
               <div
                 className={cn(
                   "overflow-hidden transition-[width] duration-100 ease-out",
-                  sidebarOpen ? "w-60" : "w-0"
+                  sidebarOpen ? "w-72" : "w-0"
                 )}
               >
                 {isInstanceSettingsRoute ? <InstanceSidebar /> : <Sidebar />}
@@ -412,7 +412,7 @@ export function Layout() {
               id="main-content"
               tabIndex={-1}
               className={cn(
-                "flex-1 p-4 md:p-6",
+                "flex-1 p-5 md:p-8 xl:p-10",
                 isMobile ? "overflow-visible pb-[calc(5rem+env(safe-area-inset-bottom))]" : "overflow-auto",
               )}
             >
