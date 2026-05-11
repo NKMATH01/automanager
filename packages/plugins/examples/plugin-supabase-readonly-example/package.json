@@ -1,0 +1,25 @@
+{
+  "name": "@automanager/plugin-supabase-readonly-example",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Read-only Supabase connector for AutoManager agents",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "test": "vitest run --config ./vitest.config.ts",
+    "typecheck": "pnpm --filter @automanager/plugin-sdk build && tsc --noEmit --project tsconfig.json"
+  },
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js"
+  },
+  "dependencies": {
+    "@automanager/plugin-sdk": "workspace:*",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

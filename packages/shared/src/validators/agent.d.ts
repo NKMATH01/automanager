@@ -1,0 +1,28 @@
+import { z } from "zod";
+export declare const agentPermissionsSchema: any;
+export declare const agentInstructionsBundleModeSchema: any;
+export declare const updateAgentInstructionsBundleSchema: any;
+export type UpdateAgentInstructionsBundle = z.infer<typeof updateAgentInstructionsBundleSchema>;
+export declare const upsertAgentInstructionsFileSchema: any;
+export type UpsertAgentInstructionsFile = z.infer<typeof upsertAgentInstructionsFileSchema>;
+export declare const createAgentSchema: any;
+export type CreateAgent = z.infer<typeof createAgentSchema>;
+export declare const createAgentHireSchema: any;
+export type CreateAgentHire = z.infer<typeof createAgentHireSchema>;
+export declare const updateAgentSchema: any;
+export type UpdateAgent = z.infer<typeof updateAgentSchema>;
+export declare const updateAgentInstructionsPathSchema: any;
+export type UpdateAgentInstructionsPath = z.infer<typeof updateAgentInstructionsPathSchema>;
+export declare const createAgentKeySchema: any;
+export type CreateAgentKey = z.infer<typeof createAgentKeySchema>;
+export declare const agentMineInboxQuerySchema: any;
+export type AgentMineInboxQuery = z.infer<typeof agentMineInboxQuerySchema>;
+export declare const wakeAgentSchema: any;
+export type WakeAgent = z.infer<typeof wakeAgentSchema>;
+export declare const resetAgentSessionSchema: any;
+export type ResetAgentSession = z.infer<typeof resetAgentSessionSchema>;
+export declare const testAdapterEnvironmentSchema: any;
+export type TestAdapterEnvironment = z.infer<typeof testAdapterEnvironmentSchema>;
+export declare const updateAgentPermissionsSchema: any;
+export type UpdateAgentPermissions = z.infer<typeof updateAgentPermissionsSchema>;
+//# sourceMappingURL=agent.d.ts.map

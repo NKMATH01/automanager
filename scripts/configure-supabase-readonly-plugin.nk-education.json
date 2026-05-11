@@ -1,0 +1,46 @@
+{
+  "companyId": "88b726c4-bdcb-425e-842d-eb8f0c1904af",
+  "mainAgentIds": [
+    "77397d61-7ec9-43b5-91a4-608133e804cc"
+  ],
+  "defaultMaxRowsPerQuery": 50,
+  "defaultStatementTimeoutMs": 10000,
+  "databases": [
+    {
+      "key": "scrliiiiexjedgzogcfo",
+      "displayName": "scrliiiiexjedgzogcfo",
+      "connectionStringSecretName": "SUPABASE_SCRLIIIIEXJEDGZOGCFO_READONLY_URL",
+      "defaultSchema": "public",
+      "allowedSchemas": [
+        "public"
+      ],
+      "allowSubAgents": true,
+      "maxRowsPerQuery": 50,
+      "statementTimeoutMs": 10000
+    },
+    {
+      "key": "cfvlxlniloxjriaaqzhx",
+      "displayName": "cfvlxlniloxjriaaqzhx",
+      "connectionStringSecretName": "SUPABASE_CFVLXLNILOXJRIAAQZHX_READONLY_URL",
+      "defaultSchema": "public",
+      "allowedSchemas": [
+        "public"
+      ],
+      "allowSubAgents": true,
+      "maxRowsPerQuery": 50,
+      "statementTimeoutMs": 10000
+    },
+    {
+      "key": "xhlxwmzhhvexqxbrukfg",
+      "displayName": "xhlxwmzhhvexqxbrukfg",
+      "connectionStringSecretName": "SUPABASE_XHLXWMZHHVEXQXBRUKFG_READONLY_URL",
+      "defaultSchema": "public",
+      "allowedSchemas": [
+        "public"
+      ],
+      "allowSubAgents": true,
+      "maxRowsPerQuery": 50,
+      "statementTimeoutMs": 10000
+    }
+  ]
+}

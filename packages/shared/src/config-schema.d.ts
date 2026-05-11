@@ -1,0 +1,28 @@
+import { z } from "zod";
+export declare const configMetaSchema: any;
+export declare const llmConfigSchema: any;
+export declare const databaseBackupConfigSchema: any;
+export declare const databaseConfigSchema: any;
+export declare const loggingConfigSchema: any;
+export declare const serverConfigSchema: any;
+export declare const authConfigSchema: any;
+export declare const storageLocalDiskConfigSchema: any;
+export declare const storageS3ConfigSchema: any;
+export declare const storageConfigSchema: any;
+export declare const secretsLocalEncryptedConfigSchema: any;
+export declare const secretsConfigSchema: any;
+export declare const paperclipConfigSchema: any;
+export type PaperclipConfig = z.infer<typeof paperclipConfigSchema>;
+export type LlmConfig = z.infer<typeof llmConfigSchema>;
+export type DatabaseConfig = z.infer<typeof databaseConfigSchema>;
+export type LoggingConfig = z.infer<typeof loggingConfigSchema>;
+export type ServerConfig = z.infer<typeof serverConfigSchema>;
+export type StorageConfig = z.infer<typeof storageConfigSchema>;
+export type StorageLocalDiskConfig = z.infer<typeof storageLocalDiskConfigSchema>;
+export type StorageS3Config = z.infer<typeof storageS3ConfigSchema>;
+export type SecretsConfig = z.infer<typeof secretsConfigSchema>;
+export type SecretsLocalEncryptedConfig = z.infer<typeof secretsLocalEncryptedConfigSchema>;
+export type AuthConfig = z.infer<typeof authConfigSchema>;
+export type ConfigMeta = z.infer<typeof configMetaSchema>;
+export type DatabaseBackupConfig = z.infer<typeof databaseBackupConfigSchema>;
+//# sourceMappingURL=config-schema.d.ts.map

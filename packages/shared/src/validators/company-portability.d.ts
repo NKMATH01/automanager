@@ -1,0 +1,25 @@
+import { z } from "zod";
+export declare const portabilityIncludeSchema: any;
+export declare const portabilityEnvInputSchema: any;
+export declare const portabilityFileEntrySchema: any;
+export declare const portabilityCompanyManifestEntrySchema: any;
+export declare const portabilitySidebarOrderSchema: any;
+export declare const portabilityAgentManifestEntrySchema: any;
+export declare const portabilitySkillManifestEntrySchema: any;
+export declare const portabilityProjectManifestEntrySchema: any;
+export declare const portabilityIssueRoutineTriggerManifestEntrySchema: any;
+export declare const portabilityIssueRoutineManifestEntrySchema: any;
+export declare const portabilityIssueManifestEntrySchema: any;
+export declare const portabilityManifestSchema: any;
+export declare const portabilitySourceSchema: any;
+export declare const portabilityTargetSchema: any;
+export declare const portabilityAgentSelectionSchema: any;
+export declare const portabilityCollisionStrategySchema: any;
+export declare const companyPortabilityExportSchema: any;
+export type CompanyPortabilityExport = z.infer<typeof companyPortabilityExportSchema>;
+export declare const companyPortabilityPreviewSchema: any;
+export type CompanyPortabilityPreview = z.infer<typeof companyPortabilityPreviewSchema>;
+export declare const portabilityAdapterOverrideSchema: any;
+export declare const companyPortabilityImportSchema: any;
+export type CompanyPortabilityImport = z.infer<typeof companyPortabilityImportSchema>;
+//# sourceMappingURL=company-portability.d.ts.map

@@ -1,0 +1,24 @@
+import { z } from "zod";
+export declare const companySkillSourceTypeSchema: any;
+export declare const companySkillTrustLevelSchema: any;
+export declare const companySkillCompatibilitySchema: any;
+export declare const companySkillSourceBadgeSchema: any;
+export declare const companySkillFileInventoryEntrySchema: any;
+export declare const companySkillSchema: any;
+export declare const companySkillListItemSchema: any;
+export declare const companySkillUsageAgentSchema: any;
+export declare const companySkillDetailSchema: any;
+export declare const companySkillUpdateStatusSchema: any;
+export declare const companySkillImportSchema: any;
+export declare const companySkillProjectScanRequestSchema: any;
+export declare const companySkillProjectScanSkippedSchema: any;
+export declare const companySkillProjectScanConflictSchema: any;
+export declare const companySkillProjectScanResultSchema: any;
+export declare const companySkillCreateSchema: any;
+export declare const companySkillFileDetailSchema: any;
+export declare const companySkillFileUpdateSchema: any;
+export type CompanySkillImport = z.infer<typeof companySkillImportSchema>;
+export type CompanySkillProjectScan = z.infer<typeof companySkillProjectScanRequestSchema>;
+export type CompanySkillCreate = z.infer<typeof companySkillCreateSchema>;
+export type CompanySkillFileUpdate = z.infer<typeof companySkillFileUpdateSchema>;
+//# sourceMappingURL=company-skill.d.ts.map

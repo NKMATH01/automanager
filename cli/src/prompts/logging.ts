@@ -1,0 +1,37 @@
+import * as p from "@clack/prompts";
+import type { LoggingConfig } from "../config/schema.js";
+import { resolveDefaultLogsDir, resolveAutomanagerInstanceId } from "../config/home.js";
+
+export async function promptLogging(): Promise<LoggingConfig> {
+  const defaultLogDir = resolveDefaultLogsDir(resolveAutomanagerInstanceId());
+  const mode = await p.select({
+    message: "로깅 모드",
+    options: [
+      { value: "file" as const, label: "파일 기반 로깅", hint: "권장" },
+      { value: "cloud" as const, label: "클라우드 로깅", hint: "준비 중" },
+    ],
+  });
+
+  if (p.isCancel(mode)) {
+    p.cancel("설정이 취소되었습니다.");
+    process.exit(0);
+  }
+
+  if (mode === "file") {
+    const logDir = await p.text({
+      message: "로그 디렉터리",
+      defaultValue: defaultLogDir,
+      placeholder: defaultLogDir,
+    });
+
+    if (p.isCancel(logDir)) {
+      p.cancel("설정이 취소되었습니다.");
+      process.exit(0);
+    }
+
+    return { mode: "file", logDir: logDir || defaultLogDir };
+  }
+
+  p.note("클라우드 로깅은 준비 중입니다. 현재는 파일 기반 로깅을 사용합니다.");
+  return { mode: "file", logDir: defaultLogDir };
+}

@@ -1,0 +1,27 @@
+import { z } from "zod";
+export declare const issueExecutionWorkspaceSettingsSchema: any;
+export declare const issueAssigneeAdapterOverridesSchema: any;
+export declare const createIssueSchema: any;
+export type CreateIssue = z.infer<typeof createIssueSchema>;
+export declare const createIssueLabelSchema: any;
+export type CreateIssueLabel = z.infer<typeof createIssueLabelSchema>;
+export declare const updateIssueSchema: any;
+export type UpdateIssue = z.infer<typeof updateIssueSchema>;
+export type IssueExecutionWorkspaceSettings = z.infer<typeof issueExecutionWorkspaceSettingsSchema>;
+export declare const checkoutIssueSchema: any;
+export type CheckoutIssue = z.infer<typeof checkoutIssueSchema>;
+export declare const addIssueCommentSchema: any;
+export type AddIssueComment = z.infer<typeof addIssueCommentSchema>;
+export declare const linkIssueApprovalSchema: any;
+export type LinkIssueApproval = z.infer<typeof linkIssueApprovalSchema>;
+export declare const createIssueAttachmentMetadataSchema: any;
+export type CreateIssueAttachmentMetadata = z.infer<typeof createIssueAttachmentMetadataSchema>;
+export declare const ISSUE_DOCUMENT_FORMATS: readonly ["markdown"];
+export declare const issueDocumentFormatSchema: any;
+export declare const issueDocumentKeySchema: any;
+export declare const upsertIssueDocumentSchema: any;
+export declare const restoreIssueDocumentRevisionSchema: any;
+export type IssueDocumentFormat = z.infer<typeof issueDocumentFormatSchema>;
+export type UpsertIssueDocument = z.infer<typeof upsertIssueDocumentSchema>;
+export type RestoreIssueDocumentRevision = z.infer<typeof restoreIssueDocumentRevisionSchema>;
+//# sourceMappingURL=issue.d.ts.map

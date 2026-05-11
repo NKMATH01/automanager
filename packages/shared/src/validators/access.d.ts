@@ -1,0 +1,22 @@
+import { z } from "zod";
+export declare const createCompanyInviteSchema: any;
+export type CreateCompanyInvite = z.infer<typeof createCompanyInviteSchema>;
+export declare const createOpenClawInvitePromptSchema: any;
+export type CreateOpenClawInvitePrompt = z.infer<typeof createOpenClawInvitePromptSchema>;
+export declare const acceptInviteSchema: any;
+export type AcceptInvite = z.infer<typeof acceptInviteSchema>;
+export declare const listJoinRequestsQuerySchema: any;
+export type ListJoinRequestsQuery = z.infer<typeof listJoinRequestsQuerySchema>;
+export declare const claimJoinRequestApiKeySchema: any;
+export type ClaimJoinRequestApiKey = z.infer<typeof claimJoinRequestApiKeySchema>;
+export declare const boardCliAuthAccessLevelSchema: any;
+export type BoardCliAuthAccessLevel = z.infer<typeof boardCliAuthAccessLevelSchema>;
+export declare const createCliAuthChallengeSchema: any;
+export type CreateCliAuthChallenge = z.infer<typeof createCliAuthChallengeSchema>;
+export declare const resolveCliAuthChallengeSchema: any;
+export type ResolveCliAuthChallenge = z.infer<typeof resolveCliAuthChallengeSchema>;
+export declare const updateMemberPermissionsSchema: any;
+export type UpdateMemberPermissions = z.infer<typeof updateMemberPermissionsSchema>;
+export declare const updateUserCompanyAccessSchema: any;
+export type UpdateUserCompanyAccess = z.infer<typeof updateUserCompanyAccessSchema>;
+//# sourceMappingURL=access.d.ts.map

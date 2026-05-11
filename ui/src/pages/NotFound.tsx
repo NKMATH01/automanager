@@ -1,0 +1,66 @@
+import { useEffect } from "react";
+import { Link, useLocation } from "@/lib/router";
+import { AlertTriangle, Compass } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useBreadcrumbs } from "../context/BreadcrumbContext";
+import { useCompany } from "../context/CompanyContext";
+
+type NotFoundScope = "board" | "invalid_company_prefix" | "global";
+
+interface NotFoundPageProps {
+  scope?: NotFoundScope;
+  requestedPrefix?: string;
+}
+
+export function NotFoundPage({ scope = "global", requestedPrefix }: NotFoundPageProps) {
+  const location = useLocation();
+  const { setBreadcrumbs } = useBreadcrumbs();
+  const { companies, selectedCompany } = useCompany();
+
+  useEffect(() => {
+    setBreadcrumbs([{ label: "찾을 수 없음" }]);
+  }, [setBreadcrumbs]);
+
+  const fallbackCompany = selectedCompany ?? companies[0] ?? null;
+  const dashboardHref = fallbackCompany ? `/${fallbackCompany.issuePrefix}/dashboard` : "/";
+  const currentPath = `${location.pathname}${location.search}${location.hash}`;
+  const normalizedPrefix = requestedPrefix?.toUpperCase();
+
+  const title = scope === "invalid_company_prefix" ? "회사를 찾을 수 없습니다" : "페이지를 찾을 수 없습니다";
+  const description =
+    scope === "invalid_company_prefix"
+      ? `"${normalizedPrefix ?? "unknown"}" 접두사와 일치하는 회사가 없습니다.`
+      : "이 경로는 존재하지 않습니다.";
+
+  return (
+    <div className="mx-auto max-w-2xl py-10">
+      <div className="rounded-lg border border-border bg-card p-6">
+        <div className="flex items-center gap-3">
+          <div className="rounded-md border border-destructive/20 bg-destructive/10 p-2">
+            <AlertTriangle className="h-5 w-5 text-destructive" />
+          </div>
+          <div>
+            <h1 className="text-xl font-semibold">{title}</h1>
+            <p className="text-sm text-muted-foreground">{description}</p>
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-md border border-border bg-muted/20 px-3 py-2 text-xs text-muted-foreground">
+          요청된 경로: <code className="font-mono">{currentPath}</code>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          <Button asChild>
+            <Link to={dashboardHref}>
+              <Compass className="mr-1.5 h-4 w-4" />
+              대시보드 열기
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link to="/">홈으로</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
