@@ -245,7 +245,16 @@ export function buildPaperclipEnv(agent: { id: string; companyId: string }): Rec
   const runtimePort = process.env.AUTOMANAGER_LISTEN_PORT ?? process.env.PORT ?? "3100";
   const apiUrl = process.env.AUTOMANAGER_API_URL ?? `http://${runtimeHost}:${runtimePort}`;
   vars.AUTOMANAGER_API_URL = apiUrl;
+  addPaperclipLegacyEnvAliases(vars);
   return vars;
+}
+
+export function addPaperclipLegacyEnvAliases(env: Record<string, string>): void {
+  for (const [key, value] of Object.entries(env)) {
+    if (!key.startsWith("AUTOMANAGER_")) continue;
+    const legacyKey = `PAPERCLIP_${key.slice("AUTOMANAGER_".length)}`;
+    env[legacyKey] ??= value;
+  }
 }
 
 export function defaultPathForPlatform() {

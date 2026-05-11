@@ -12,6 +12,7 @@ import {
   parseObject,
   parseJson,
   buildPaperclipEnv,
+  addPaperclipLegacyEnvAliases,
   readPaperclipRuntimeSkillEntries,
   joinPromptSections,
   buildInvocationEnvForLogs,
@@ -240,6 +241,7 @@ async function buildClaudeRuntimeConfig(input: ClaudeExecutionInput): Promise<Cl
   if (!hasExplicitApiKey && authToken) {
     env.AUTOMANAGER_API_KEY = authToken;
   }
+  addPaperclipLegacyEnvAliases(env);
 
   const runtimeEnv = ensurePathInEnv({ ...process.env, ...env });
   await ensureCommandResolvable(command, cwd, runtimeEnv);
