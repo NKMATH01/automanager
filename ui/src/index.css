@@ -809,3 +809,88 @@ a.paperclip-project-mention-chip {
 [class*="_toolbarNodeKindSelectContainer_"] {
   z-index: 81 !important;
 }
+
+/* Premium board shell: visible app-wide redesign for the operating console. */
+.premium-shell {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--background) 92%, white 8%), var(--background)),
+    radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 32%);
+}
+
+.dark .premium-shell {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--background) 88%, #0f766e 12%), var(--background)),
+    radial-gradient(circle at 18% 0%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 34%);
+}
+
+.premium-shell aside {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--sidebar) 88%, white 12%), var(--sidebar));
+  box-shadow: inset -1px 0 0 color-mix(in oklab, var(--sidebar-border) 82%, var(--foreground) 18%);
+}
+
+.dark .premium-shell aside {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--sidebar) 76%, #0f766e 24%), var(--sidebar));
+}
+
+.premium-shell main {
+  background:
+    linear-gradient(color-mix(in oklab, var(--border) 34%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--border) 28%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+.premium-shell main > * {
+  position: relative;
+  z-index: 1;
+}
+
+.premium-shell [data-slot="card"],
+.premium-shell [class*="rounded-lg"][class*="border"],
+.premium-shell [class*="rounded-xl"][class*="border"],
+.premium-shell [class*="rounded-2xl"][class*="border"] {
+  border-color: color-mix(in oklab, var(--border) 80%, var(--primary) 20%);
+  background-color: color-mix(in oklab, var(--card) 92%, white 8%);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 65%, transparent) inset,
+    0 12px 28px color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+.dark .premium-shell [data-slot="card"],
+.dark .premium-shell [class*="rounded-lg"][class*="border"],
+.dark .premium-shell [class*="rounded-xl"][class*="border"],
+.dark .premium-shell [class*="rounded-2xl"][class*="border"] {
+  background-color: color-mix(in oklab, var(--card) 92%, #0f766e 8%);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 8%, transparent) inset,
+    0 18px 34px color-mix(in oklab, black 32%, transparent);
+}
+
+.premium-shell [data-slot="button"][data-variant="default"] {
+  background: color-mix(in oklab, var(--primary) 92%, #0f766e 8%);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 24%, transparent) inset,
+    0 10px 18px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+.premium-shell [data-slot="button"][data-variant="outline"],
+.premium-shell [data-slot="button"][data-variant="secondary"] {
+  background-color: color-mix(in oklab, var(--card) 86%, var(--accent) 14%);
+  border-color: color-mix(in oklab, var(--border) 76%, var(--primary) 24%);
+}
+
+.premium-shell h1 {
+  font-size: clamp(1.45rem, 1.2rem + 0.8vw, 2rem);
+  line-height: 1.18;
+}
+
+.premium-shell h2 {
+  font-size: clamp(1.15rem, 1rem + 0.45vw, 1.5rem);
+}
+
+.premium-shell .paperclip-markdown {
+  font-size: 1rem;
+  line-height: 1.75;
+}

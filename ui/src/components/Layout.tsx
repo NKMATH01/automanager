@@ -261,7 +261,7 @@ export function Layout() {
   return (
     <div
       className={cn(
-        "bg-background text-foreground pt-[env(safe-area-inset-top)]",
+        "premium-shell bg-background text-foreground pt-[env(safe-area-inset-top)]",
         isMobile ? "min-h-dvh" : "flex h-dvh flex-col overflow-hidden",
       )}
     >
